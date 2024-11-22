@@ -1,9 +1,9 @@
 === Custom Order Numbers for WooCommerce ===
 Contributors: tychesoftwares
 Tags: woocommerce, custom order numbers, sequential order numbers
-Requires at least: 7.3
-Tested up to: 6.6.2
-Stable tag: 1.8.0
+Requires at least: 4.4
+Tested up to: 6.7.1
+Stable tag: 1.9.0
 Requires PHP: 7.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -148,7 +148,14 @@ So what you will have to do is, you will have to contact to support team of the 
 Here is the code they will need.
 $custom_order_number = $order->get_order_number(); //where $order is an order object
 
+== External Services ==
+This plugin communicates with our tracking server to send usage data **only** if the user has explicitly opted in to usage tracking. For detailed information about what is tracked, please refer to our [usage tracking documentation](https://www.tychesoftwares.com/docs/woocommerce-custom-order-numbers/usage-tracking-order-numbers/).
+
 == Changelog ==
+= 1.9.0 - 22/11/2024 =
+* Fix - Translation loading was triggered too early, causing errors when changing the site language in WordPress 6.7.
+* Tweak - Removed the call to our tracking server to fetch the deactivation reasons and added them in the plugin itself.
+
 = 1.8.0 - 22/10/2024 =
 * Fix - Deactivation survey request was being sent even though 'Skip & deactivate' was selected while deactivating the plugin.
 

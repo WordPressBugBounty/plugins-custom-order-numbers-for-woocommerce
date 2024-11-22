@@ -47,7 +47,7 @@ if ( ! class_exists( 'Alg_WC_Custom_Order_Numbers' ) ) :
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		public $version = '1.8.0';
+		public $version = '1.9.0';
 
 		/**
 		 * Plugin setting.
@@ -92,7 +92,7 @@ if ( ! class_exists( 'Alg_WC_Custom_Order_Numbers' ) ) :
 		public function __construct() {
 
 			// Set up localisation.
-			load_plugin_textdomain( 'custom-order-numbers-for-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
+			add_action( 'init', array( &$this, 'con_load_textdomain' ) );
 
 			// Include required files.
 			$this->includes();
@@ -220,6 +220,17 @@ if ( ! class_exists( 'Alg_WC_Custom_Order_Numbers' ) ) :
 				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', 'custom-order-numbers-for-woocommerce/custom-order-numbers-for-woocommerce.php', true );
 				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'orders_cache', 'custom-order-numbers-for-woocommerce/custom-order-numbers-for-woocommerce.php', true );
 			}
+		}
+
+		/**
+		 * Load the textdomain.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return  string
+		 */
+		public function con_load_textdomain() {
+			load_plugin_textdomain( 'custom-order-numbers-for-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
 		}
 
 	}
