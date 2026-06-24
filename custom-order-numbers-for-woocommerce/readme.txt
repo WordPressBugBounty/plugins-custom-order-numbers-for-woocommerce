@@ -2,8 +2,8 @@
 Contributors: tychesoftwares
 Tags: woocommerce, custom order numbers, sequential order numbers
 Requires at least: 4.4
-Tested up to: 6.9.0
-Stable tag: 1.13.0
+Tested up to: 7.0.0
+Stable tag: 2.0.0
 Requires PHP: 7.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -24,13 +24,13 @@ This plugin lets you set [custom order numbers](https://www.tychesoftwares.com/s
 * Custom numbers will be assigned to **new orders** automatically.
 * There is also a tool to **renumerate** (i.e. recount) existing orders.
 * Optionally you can add **prefix** to order number.
+* Add the **order date** as a prefix to custom order numbers.
 * You can also enable **order tracking** by custom number.
 * Optionally you can enable **admin order search** by custom number.
 
 ### Check out the PRO version of [Custom Order Numbers for WooCommerce plugin](https://www.tychesoftwares.com/store/premium-plugins/custom-order-numbers-woocommerce/?utm_source=wprepo&utm_medium=prolink&utm_campaign=CustomNumbers).
 = Features of Premium Version =
 * Order number **template**.
-* Order number **date prefix**.
 * Order number **width**.
 * Order number custom **suffix**.
 * Order number **date suffix**.
@@ -152,6 +152,15 @@ $custom_order_number = $order->get_order_number(); //where $order is an order ob
 This plugin communicates with our tracking server to send usage data **only** if the user has explicitly opted in to usage tracking. For detailed information about what is tracked, please refer to our [usage tracking documentation](https://www.tychesoftwares.com/docs/woocommerce-custom-order-numbers/usage-tracking-order-numbers/).
 
 == Changelog ==
+
+= 2.0.0 - 24/06/2026 =
+* New - React-based admin interface for Settings, Prefix/Suffix rules, and FAQs pages.
+* Dev - Introduced a REST API layer (con/v1) for all admin data operations, with per-endpoint capability checks.
+* Dev - Plugin settings migrated from individual `alg_wc_pif_*` options to consolidated `con_general_settings` options.
+* Dev - Removed dead WooCommerce < 3.0 functions.
+* Tweak - Updated for compatibility with WordPress 7.0.
+* Tweak - Updated for compatibility with WooCommerce 10.8.1.
+
 = 1.13.0 - 29/01/2026 =
 * Enhancement - Added an Order Number Date Prefix setting to prepend the order date to custom order numbers.
 
