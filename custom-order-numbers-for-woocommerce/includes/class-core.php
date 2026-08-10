@@ -880,11 +880,26 @@ if ( ! class_exists( 'Tyche\CON\Core' ) ) :
 					}
 
 					$data  = array(
-						'{prefix}'      => $prefix_data['custom'],
-						'{date_prefix}' => ( $prefix_data['date'] ? date_i18n( $prefix_data['date'], $custom_order_timestamp ) : '' ),
-						'{number}'      => sprintf( '%0' . $order_number_width . 's', $custom_order_number_by_width ),
-						'{suffix}'      => '',
-						'{date_suffix}' => '',
+						'{dynamic_prefix}' => $prefix_data['custom'],
+						'{prefix}'         => $prefix_data['custom'],
+						'{date_prefix}'    => ( $prefix_data['date'] ? date_i18n( $prefix_data['date'], $custom_order_timestamp ) : '' ),
+						'{number}'         => sprintf( '%0' . $order_number_width . 's', $custom_order_number_by_width ),
+						'{suffix}'         => '',
+						'{date_suffix}'    => '',
+						'{dynamic_suffix}' => '',
+						// Placeholders for future expansion or additional rules.
+						'{product_prefix}'        => '',
+						'{category_prefix}'       => '',
+						'{user_role_prefix}'      => '',
+						'{payment_method_prefix}' => '',
+						'{country_prefix}'        => '',
+						'{free_orders_prefix}'    => '',
+						'{product_suffix}'        => '',
+						'{category_suffix}'       => '',
+						'{user_role_suffix}'      => '',
+						'{payment_method_suffix}' => '',
+						'{country_suffix}'        => '',
+						'{free_orders_suffix}'    => '',
 					);
 
 					$final = str_replace( array_keys( $data ), $data, $template );
@@ -967,7 +982,6 @@ if ( ! class_exists( 'Tyche\CON\Core' ) ) :
 							if ( $this->con_wc_hpos_enabled() ) {
 								$order->update_meta_data( '_alg_wc_custom_order_number', $current_order_number );
 								$order->update_meta_data( '_alg_wc_full_custom_order_number', $full_custom_order_number );
-								$order->save();
 							} else {
 								update_post_meta( $order_id, '_alg_wc_custom_order_number', $current_order_number );
 								update_post_meta( $order_id, '_alg_wc_full_custom_order_number', $full_custom_order_number );
