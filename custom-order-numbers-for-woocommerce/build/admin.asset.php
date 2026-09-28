@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wp-api-fetch', 'wp-components', 'wp-components/build-style/style.css', 'wp-compose', 'wp-date', 'wp-element', 'wp-i18n', 'wp-primitives'), 'version' => '94ea762dc56500eb02e6');
+<?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wp-api-fetch', 'wp-components', 'wp-components/build-style/style.css', 'wp-compose', 'wp-date', 'wp-element', 'wp-i18n', 'wp-primitives'), 'version' => '66e9225ac6d9f98fc97b');

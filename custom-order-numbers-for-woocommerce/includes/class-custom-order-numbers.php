@@ -28,7 +28,7 @@ final class Custom_Order_Numbers {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	protected static $plugin_version = '2.1.0';
+	protected static $plugin_version = '2.2.0';
 
 	/**
 	 * Minimum version of WordPress required.
@@ -384,7 +384,7 @@ final class Custom_Order_Numbers {
 			'counter_reset_enabled'           => 'no',
 			'day_of_counter_reset_weekly'     => 'mon',
 			'counter_reset_counter_value'     => 1,
-			'min_width'                       => 1,
+			'min_width'                       => 0,
 			'settings_to_apply'               => 'new_order',
 			'settings_to_apply_from_order_id' => '',
 			'settings_to_apply_from_date'     => '',
